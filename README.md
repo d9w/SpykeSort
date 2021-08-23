@@ -30,17 +30,18 @@ conda install -c conda-forge pipenv
 pipenv install .
 ```
 
-## Testing
+## Test Data
 
-SpykeSort includes tests which run on sample data. Data is provided [here](https://zenodo.org/record/1205233#.XMH886xKjCI) from the article:
+Example test data is provided [here](https://zenodo.org/record/1205233#.XMH886xKjCI) from the article:
 
 Yger, Pierre, et al. "A spike sorting toolbox for up to thousands of electrodes validated with ground truth recordings in vitro and in vivo." Elife 7 (2018): e34518.
 
-The 20160426_patch3.tar.gz (md5:dfb6045c114b459b63373324963c82ba) file must be downloaded and extracted into the `data` directory:
+The `20160426_patch3.tar.gz` (md5:dfb6045c114b459b63373324963c82ba) file must be downloaded and extracted into the `data/test` directory:
 
 ``` sh
-mkdir -p data
-cd data
+# TODO: make a python script for windows
+mkdir -p data/test
+cd data/test
 wget https://zenodo.org/record/1205233/files/20160426_patch3.tar.gz?download=1
 tar xvzf 20160426_patch3.tar.gz
 ```
@@ -50,13 +51,29 @@ Verify that the downloaded image matches the following:
 
 Comparison with other spike detection libraries on this dataset can be found [here](https://spikeforest.flatironinstitute.org/recording/paired_mea64c/20160426_patch3).
 
-To execute these tests, run the following:
+## Notebooks
+
+Notebooks demonstrating SpykeSort's functionality on the sample data are in `notebooks`:
+
++ `notebooks/filtering.ipynb` : Raw signal filtering and denoising
++ `notebooks/detection.ipynb` : Spike detection
++ `notebooks/align_spikes.ipynb` : Spike detection and alignment
++ `notebooks/clustering_pca.py` : Spike clustering using PCA
++ `notebooks/clustering_kmeans.py` : Spike clustering using K-means
+
+To use these notebooks, launch a [Jupyter](https://jupyter.org/) server in the correct environment:
+
+``` sh
+jupyter notebook
+```
+
+## Unit tests
+
+SpykeSort includes tests which run on the sample data. To execute these tests, run the following:
 
 ``` sh
 py.test 
 ```
-
-
 
 ## Development
 
