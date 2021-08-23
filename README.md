@@ -32,7 +32,7 @@ pipenv install .
 
 ## Test Data
 
-Example test data is provided [here](https://zenodo.org/record/1205233#.XMH886xKjCI) from the article:
+Example test data is provided [here](https://zenodo.org/record/1205233#.XMH886xKjCI) from the [article](https://elifesciences.org/articles/34518):
 
 Yger, Pierre, et al. "A spike sorting toolbox for up to thousands of electrodes validated with ground truth recordings in vitro and in vivo." Elife 7 (2018): e34518.
 
