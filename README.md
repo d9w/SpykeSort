@@ -32,11 +32,31 @@ pipenv install .
 
 ## Testing
 
-SpykeSort includes tests which run on sample data. To execute these tests, run the following:
+SpykeSort includes tests which run on sample data. Data is provided [here](https://zenodo.org/record/1205233#.XMH886xKjCI) from the article:
+
+Yger, Pierre, et al. "A spike sorting toolbox for up to thousands of electrodes validated with ground truth recordings in vitro and in vivo." Elife 7 (2018): e34518.
+
+The 20160426_patch3.tar.gz (md5:dfb6045c114b459b63373324963c82ba) file must be downloaded and extracted into the `data` directory:
+
+``` sh
+mkdir -p data
+cd data
+wget https://zenodo.org/record/1205233/files/20160426_patch3.tar.gz?download=1
+tar xvzf 20160426_patch3.tar.gz
+```
+
+Verify that the downloaded image matches the following:
+![Patch 3](imgs/patch_3.jpg)
+
+Comparison with other spike detection libraries on this dataset can be found [here](https://spikeforest.flatironinstitute.org/recording/paired_mea64c/20160426_patch3).
+
+To execute these tests, run the following:
 
 ``` sh
 py.test 
 ```
+
+
 
 ## Development
 
