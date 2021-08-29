@@ -9,10 +9,11 @@ matplotlib = "*"
 sklearn = "*"
 pandas = "*"
 scipy = "*"
-spykesort = {path = "."}
 pytest = "*"
+jupyter = "*"
 
 [dev-packages]
+skpyesort = {editable = true, path = "."}
 
 [requires]
 python_version = "3.9"
